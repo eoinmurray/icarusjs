@@ -14,6 +14,19 @@
         <link rel="stylesheet" href="styles/a22ae526.main.css">
 
         <script src="scripts/vendor/ff562a53.modernizr.js"></script>
+
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+            });
+
+            MathJax.Hub.Register.StartupHook("End",function () {
+                $('.documentation').fadeIn()
+            });
+
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
     </head>
     <body>
 
