@@ -1,0 +1,184 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Icarus.js - Quantum Optics simulation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css({.tmp,app}) styles/main.css -->
+        <!-- <link rel="stylesheet" href="styles/bootstrap.css"> -->
+        <link rel="stylesheet" href="styles/bootstrap.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/nprogress.css">
+        <link rel="stylesheet" href="styles/font-awesome/css/font-awesome.css">
+        <!-- endbuild -->
+
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="scripts/libs/nprogress.js"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+            });
+
+            MathJax.Hub.Register.StartupHook("End",function () {
+                $('.documentation').fadeIn()
+            });
+
+        </script>
+        <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body>
+
+
+        <div class="container">
+
+            <div class="headline-container">
+                <div class="headline-center col-lg-5 centered ">
+                <div class="text-center">
+                    <!-- <hr/> -->
+                        <h1>Icarus.js</h1>
+                        <p class="lead">Bell state optics simulation</p>
+                        <a type="button" class="btn btn-success btn-lg start">Start simulation.</a>
+                        <p class="error hide">
+                            Sorry, WebGL is not supported in your browser.
+                            Please upgrade to a new version of
+                            <a href="https://www.google.com/chrome">Google Chrome</a>
+                            or
+                            <a href="https://www.mozilla.org/firefox">Firefox.</a>
+                        </p>
+                    <br/>
+                    <br/>
+                    <hr/>
+                    <br/>
+                </div>
+                <div style="display:none" class="documentation">
+                    <h2>Introduction</h2>
+                        <p class="lead">
+                        Icarus.js fully simulates the Hanbury Brown Twiss experiment for the Bell input states.
+                        </p>
+                        <p>
+                        These state are given in bra-ket notation as
+                            $$\left|\psi\right\rangle = \frac{1}{\sqrt{2}} \left(\left|\uparrow\uparrow\right\rangle + \left|\downarrow\downarrow\right\rangle \right)$$
+
+                            $$\left|\psi\right\rangle = \frac{1}{\sqrt{2}} \left(\left|\uparrow\uparrow\right\rangle - \left|\downarrow\downarrow\right\rangle \right)$$
+
+                            $$\left|\psi\right\rangle = \frac{1}{\sqrt{2}} \left(\left|\uparrow\downarrow\right\rangle + \left|\downarrow\uparrow\right\rangle \right)$$
+
+                            $$\left|\psi\right\rangle = \frac{1}{\sqrt{2}} \left(\left|\uparrow\downarrow\right\rangle - \left|\downarrow\uparrow\right\rangle \right)$$
+
+                        </p>
+                    <h2>Hanbury Brown Twiss Correlator</h2>
+
+                    <h2>Modelling the correlator</h2>
+
+                    <h2>Icarus.js simulator</h2>
+                    <ul>
+                        <li>Intro to the simulation</li>
+                        <li>Overview for one of the states say HH + VV, and the results</li>
+                        <li>Other options... Bell states</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+                  <div class="row" id="footer">
+                        <div class="col-lg-10 col-lg-offset-1 lead">
+                            Made with <i class="fa fa-heart-o"></i> by <a href="http://github.com/eoinmurray"> eoinmurray</a>@<a href="http://www.tyndall.ie/content/epitaxy-and-physics-nanostructures">epn-tyndall</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+
+            <div id="my-gui-container"></div>
+            <div class="three-js-hook"></div>
+            <div class="histograms row">
+                <div class="col-lg-3 histogram chartD1D3"></div>
+                <div class="col-lg-3 histogram chartD1D4"></div>
+                <div class="col-lg-3 histogram chartD2D3"></div>
+                <div class="col-lg-3 histogram chartD2D4"></div>
+            </div>
+        </div>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>
+             or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+        <!-- build:js scripts/vendor.js -->
+        <script src="bower_components/threejs/build/three.js"></script>
+        <script src="bower_components/threejs/examples/js/controls/TrackballControls.js"></script>
+        <script src="bower_components/threejs/examples/js/controls/OrbitControls.js"></script>
+        <script src="bower_components/threejs/examples/js/controls/FlyControls.js"></script>
+
+        <script src="bower_components/threejs/examples/js/shaders/ConvolutionShader.js"></script>
+        <script src="bower_components/threejs/examples/js/shaders/CopyShader.js"></script>
+        <script src="bower_components/threejs/examples/js/shaders/MirrorShader.js"></script>
+        <script src="bower_components/threejs/examples/js/shaders/FXAAShader.js"></script>
+
+        <script src="bower_components/threejs/examples/js/postprocessing/EffectComposer.js"></script>
+        <script src="bower_components/threejs/examples/js/postprocessing/MaskPass.js"></script>
+        <script src="bower_components/threejs/examples/js/postprocessing/RenderPass.js"></script>
+        <script src="bower_components/threejs/examples/js/postprocessing/ShaderPass.js"></script>
+        <script src="bower_components/threejs/examples/js/postprocessing/BloomPass.js"></script>
+        <script src="bower_components/threejs/examples/js/shaders/FilmShader.js"></script>
+        <script src="bower_components/threejs/examples/js/postprocessing/FilmPass.js"></script>
+
+        <script src="bower_components/threejs/examples/js/Detector.js"></script>
+        <script src="bower_components/threejs/examples/js/loaders/STLLoader.js"></script>
+
+        <script src="bower_components/threejs/src/extras/helpers/AxisHelper.js"></script>
+        <script src="bower_components/threejs/examples/js/libs/stats.min.js"></script>
+
+        <script src="bower_components/underscore/underscore-min.js"></script>
+        <script src="bower_components/backbone/backbone-min.js"></script>
+        <script src="bower_components/mathjs/dist/math.js"></script>
+        <script src="scripts/libs/parallel.js"></script>
+        <script src="scripts/libs/dat.gui.js"></script>
+        <script src="bower_components/threex.windowresize/threex.windowresize.js"></script>
+        <script src="bower_components/threex.rendererstats/threex.rendererstats.js"></script>
+
+        <script src="scripts/libs/sparks.js"></script>
+        <script src="bower_components/stats.js/build/stats.min.js"></script>
+        <script src="bower_components/d3/d3.js"></script>
+        <script src="scripts/libs/histogram.js"></script>
+        <script src="scripts/libs/dex/dex.js"></script>
+        <script src="scripts/libs/dex/component/d3/LineChart.js"></script>
+        <script src="scripts/libs/dex/component/d3/BarChart.js"></script>
+        <!-- endbuild -->
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <script src="scripts/templates.js"></script>
+        <script src="scripts/models/QuantumDot.js"></script>
+        <script src="scripts/models/Icarus.js"></script>
+        <script src="scripts/models/channel.js"></script>
+        <script src="scripts/models/detector.js"></script>
+        <script src="scripts/models/pcm.js"></script>
+        <script src="scripts/collections/Icarus.js"></script>
+        <script src="scripts/views/Icarus.js"></script>
+        <script src="scripts/views/particles.js"></script>
+        <script src="scripts/views/path.js"></script>
+        <script src="scripts/views/bench.js"></script>
+        <script src="scripts/views/datgui.js"></script>
+        <script src="scripts/views/histogram.js"></script>
+        <!-- endbuild -->
+
+</body>
+</html>
