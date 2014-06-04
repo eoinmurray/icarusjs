@@ -47,7 +47,7 @@ icarusjs.Views.IcarusView.prototype.addStaticObjects = function(){
 	this.D1.position =  {x : -200 + 320, y : -100 + 20, z : 0};
 
 	d1label = makeTextSprite('D1', {
-		fontsize: 12,
+		fontsize: 16,
 		borderColor: {r:0, g:0, b:0, a:0.0},
 		backgroundColor: {r:255, g:255, b:255, a:0.0}
 	});
@@ -60,11 +60,11 @@ icarusjs.Views.IcarusView.prototype.addStaticObjects = function(){
 	this.D2.position =  {x : -200 + 260, y : -100 + 80, z : 0};
 
 	d2label = makeTextSprite('D2', {
-		fontsize: 12,
+		fontsize: 16,
 		borderColor: {r:0, g:0, b:0, a:0.0},
 		backgroundColor: {r:255, g:255, b:255, a:0.0}
 	});
-	d2label.position.set(-200 + 250, -100 + 0, 0);
+	d2label.position.set(-200 + 250, -100 + 70, 0);
 	this.scene.add( d2label );
 
 
@@ -90,7 +90,7 @@ icarusjs.Views.IcarusView.prototype.addStaticObjects = function(){
 	this.D3.position =  {x : -200 + 100, y : -100 + 240, z : 0};
 
 	d3label = makeTextSprite('D3', {
-		fontsize: 12,
+		fontsize: 16,
 		borderColor: {r:0, g:0, b:0, a:0.0},
 		backgroundColor: {r:255, g:255, b:255, a:0.0}
 	});
@@ -103,7 +103,7 @@ icarusjs.Views.IcarusView.prototype.addStaticObjects = function(){
 	this.D4.position =  {x : -200 + 160, y : -100 + 180, z : 0};
 
 	d4label = makeTextSprite('D4', {
-		fontsize: 12,
+		fontsize: 16,
 		borderColor: {r:0, g:0, b:0, a:0.0},
 		backgroundColor: {r:255, g:255, b:255, a:0.0}
 	});
