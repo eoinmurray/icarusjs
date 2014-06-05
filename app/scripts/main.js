@@ -66,6 +66,7 @@ $(document).ready(function () {
     $('.documentation').delay(500).animate({ opacity: 1 }, 700)
 
 
+
     if ( Detector.webgl ){
         icarusjs.init();
     }

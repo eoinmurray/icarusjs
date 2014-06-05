@@ -18,10 +18,11 @@ body {
 .headline-container{
 	background-color: white;
 	position: absolute;
-    bottom: 0px;
     left: 0px;
     right: 0px;
     top: 0px;
+    min-height: 100%;
+    height: auto;
     z-index: 9;
 }
 
@@ -34,7 +35,7 @@ body {
 
 .container{
     height: 100%;
-    min-width: 100%;
+    min-width: 100% !important;
     margin-left: 0px;
     margin-right: 0px;
     padding: 0px;
@@ -198,12 +199,13 @@ input[type="submit"] {
 }
 
 a {
-    color: #48a3a6;
+    color: #34495e;
     text-decoration: none;
 }
 
 a:hover {
-    color: #201e1c;
+
+    color: #98AFC7;
 }
 
 p {

@@ -16,10 +16,10 @@ icarusjs.Views.IcarusView = Backbone.View.extend({
 		this.initializeParticleSystem()
 
 	},
-	
+
 	update : function(){
 		var speed = this.model.get('speed')
-		
+
 		var temp = (Math.floor(75/speed)==0) ? 1 : Math.floor(75/speed)
 
 		if (this.time % temp ==0 ) {
@@ -52,14 +52,14 @@ icarusjs.Views.IcarusView = Backbone.View.extend({
 
 		if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 		this.$container = $('.three-js-hook');
-		
+
 		var width = this.$container.width();
 		var height = this.$container.height();
 
 		var viewAngle = 45,
 			aspect = width / height,
 			near = 0.1,
-			far = 10000;		
+			far = 10000;
 
 
 		this.renderer = new THREE.WebGLRenderer({antialias : true});
@@ -71,7 +71,7 @@ icarusjs.Views.IcarusView = Backbone.View.extend({
 
 		this.scene.add(this.camera);
 		this.camera.position.z = 150;
-		this.camera.position.x = -00;
+		this.camera.position.x = 0;
 		this.camera.position.y = -400;
 
 		this.camera.updateMatrix();
@@ -79,7 +79,7 @@ icarusjs.Views.IcarusView = Backbone.View.extend({
 		this.camera.lookAt(0, 0, 0)
 
 		this.resize()
-		this.$container.append(this.renderer.domElement);		
+		this.$container.append(this.renderer.domElement);
 
 		THREEx.WindowResize(this.renderer, this.camera);
 
@@ -159,7 +159,7 @@ icarusjs.Views.IcarusView = Backbone.View.extend({
 			self.stats.update();
 
 			render()
-			 
+
 			if(!self.gameOver) window.requestAnimationFrame(animate);
 		}
 
@@ -168,8 +168,8 @@ icarusjs.Views.IcarusView = Backbone.View.extend({
 			self.composer.render(0.05)
 			// self.renderer.render(self.scene, self.camera);
 		}
-		
-		animate()	
+
+		animate()
 	}
 
 });

@@ -265,8 +265,6 @@ icarusjs.Models.QuantumDotModel = Backbone.Model.extend({
 
 		state = this.get('state')
 
-		console.log(state)
-
 		if(this.get('QWPon') || this.get('HWPon')){
 			d1d3p = this.pathProbabilities.evalExpression(state, names[0], phi, this.get('hwp1'), this.get('hwp2'), this.get('qwp1'), this.get('qwp2'))
 			d1d4p = this.pathProbabilities.evalExpression(state, names[1], phi, this.get('hwp1'), this.get('hwp2'), this.get('qwp1'), this.get('qwp2'))

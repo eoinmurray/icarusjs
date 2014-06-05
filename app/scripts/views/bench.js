@@ -13,7 +13,7 @@ icarusjs.Views.IcarusView.prototype.addStaticObjects = function(){
 
 	var metalMaterial = new THREE.MeshPhongMaterial( {bumpScale: 4, color: 0x222222, ambient: 0x666666, specular: 0x999999, shininess: 200, metal: true, shading: THREE.SmoothShading } )
 
-	this.plane = new THREE.Mesh(new THREE.CubeGeometry(400, 400, 2),
+	this.plane = new THREE.Mesh(new THREE.CubeGeometry(500, 500, 2),
 		new THREE.MeshPhongMaterial( {bumpScale: 4, color: 0x333333, ambient: 0x666666, specular: 0x999999, shininess: 200, metal: true, shading: THREE.SmoothShading } )
 		);
 	this.plane.position.z = -17
@@ -25,6 +25,14 @@ icarusjs.Views.IcarusView.prototype.addStaticObjects = function(){
 		color: 'red'
 	}));
 	this.NBS.position =  {x : -200 + 100, y : -100 + 20, z : 0};
+
+	nbslabel = makeTextSprite('NBS', {
+		fontsize: 16,
+		borderColor: {r:0, g:0, b:0, a:0.0},
+		backgroundColor: {r:255, g:255, b:255, a:0.0}
+	});
+	nbslabel.position.set(-200 + 90,-100, 0);
+	this.scene.add( nbslabel );
 
 	this.HWP1 = new THREE.Mesh(new THREE.CubeGeometry(5, 20, 20), new THREE.MeshLambertMaterial({
 		color: 'red'
@@ -40,6 +48,14 @@ icarusjs.Views.IcarusView.prototype.addStaticObjects = function(){
 		color: 'red'
 	}));
 	this.PBS1.position =  {x : -200 + 260, y : -100 + 20, z : 0	};
+
+	pbs1label = makeTextSprite('PBS', {
+		fontsize: 16,
+		borderColor: {r:0, g:0, b:0, a:0.0},
+		backgroundColor: {r:255, g:255, b:255, a:0.0}
+	});
+	pbs1label.position.set(-200 + 250,-100 , 0);
+	this.scene.add( pbs1label );
 
 	this.D1 = new THREE.Mesh(new THREE.CubeGeometry(10, 20, 20), new THREE.MeshLambertMaterial({
 		color: 'red'
@@ -83,6 +99,14 @@ icarusjs.Views.IcarusView.prototype.addStaticObjects = function(){
 		color: 'red'
 	}));
 	this.PBS2.position =  {x : -200 + 100, y : -100 + 180, z : 0};
+
+	pbs2label = makeTextSprite('PBS', {
+		fontsize: 16,
+		borderColor: {r:0, g:0, b:0, a:0.0},
+		backgroundColor: {r:255, g:255, b:255, a:0.0}
+	});
+	pbs2label.position.set(-200 + 80,-100+170 , 0);
+	this.scene.add( pbs2label );
 
 	this.D3 = new THREE.Mesh(new THREE.CubeGeometry(20, 10, 20), new THREE.MeshLambertMaterial({
 		color: 'red'

@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="styles/2ac05553.main.css">
+        <link rel="stylesheet" href="styles/5d92add3.main.css">
 
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -37,12 +37,14 @@
         <div class="container">
 
             <div class="headline-container">
-                <div class="headline-center col-lg-5 centered">
+                <div class="headline-center col-xs-5 centered">
                 <div class="text-center">
                     <!-- <hr/> -->
                         <h1>Icarus.js</h1>
                         <p class="lead">Bell state optics simulation</p>
                         <a type="button" class="btn btn-success btn-lg start">Start simulation.</a>
+
+                        <p><small style="font-size:14px" class="lead">(Uses WebGL, try to use a decent computer.)</small></p>
                         <p class="error hide">
                             Sorry, WebGL is not supported in your browser.
                             Please upgrade to a new version of
@@ -50,41 +52,50 @@
                             or
                             <a href="https://www.mozilla.org/firefox">Firefox.</a>
                         </p>
-                    <br>
-                    <br>
                     <hr>
-                    <br>
                 </div>
                 <div style="display:none" class="documentation">
-                    <h2>Introduction</h2>
+
+                    <ul>
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#correlator">Hanbury Brown Twiss Correlator</a></li>
+                        <li><a href="#modelling">Modelling the experiment</a></li>
+                        <li><a href="#simulator">Icarus.js simulator</a></li>
+                        <li><a href="#conclusions">Conclusions</a></li>
+                    </ul>
+
+                    <hr>
+
+                    <h2 id="introduction"><a href="#introduction">Introduction</a></h2>
                         <p class="lead">
                         Icarus.js fully simulates the Hanbury Brown Twiss experiment for the Bell input states.
                         </p>
                         <p>
                         These state are given in bra-ket notation as
-                            $$\left|\psi\right\rangle = \frac{1}{\sqrt{2}} \left(\left|\uparrow\uparrow\right\rangle + \left|\downarrow\downarrow\right\rangle \right)$$
+                            $$\left|\Phi^+\right\rangle = \frac{1}{\sqrt{2}} \left(\left|\uparrow\uparrow\right\rangle + \left|\downarrow\downarrow\right\rangle \right)$$
 
-                            $$\left|\psi\right\rangle = \frac{1}{\sqrt{2}} \left(\left|\uparrow\uparrow\right\rangle - \left|\downarrow\downarrow\right\rangle \right)$$
+                            $$\left|\Phi^-\right\rangle = \frac{1}{\sqrt{2}} \left(\left|\uparrow\uparrow\right\rangle - \left|\downarrow\downarrow\right\rangle \right)$$
 
-                            $$\left|\psi\right\rangle = \frac{1}{\sqrt{2}} \left(\left|\uparrow\downarrow\right\rangle + \left|\downarrow\uparrow\right\rangle \right)$$
+                            $$\left|\Psi^+\right\rangle = \frac{1}{\sqrt{2}} \left(\left|\uparrow\downarrow\right\rangle + \left|\downarrow\uparrow\right\rangle \right)$$
 
-                            $$\left|\psi\right\rangle = \frac{1}{\sqrt{2}} \left(\left|\uparrow\downarrow\right\rangle - \left|\downarrow\uparrow\right\rangle \right)$$
+                            $$\left|\Psi^-\right\rangle = \frac{1}{\sqrt{2}} \left(\left|\uparrow\downarrow\right\rangle - \left|\downarrow\uparrow\right\rangle \right)$$
 
                         </p>
-                    <h2>Hanbury Brown Twiss Correlator</h2>
+                    <h2 id="correlator"><a href="#correlator">Hanbury Brown Twiss Correlator</a></h2>
+                    <img style="margin-left:-260px" src="http://i.imgur.com/otviwFo.png">
 
-                    <h2>Modelling the correlator</h2>
+                    <h2 id="modelling"><a href="#modelling">Modelling the experiment</a></h2>
 
-                    <h2>Icarus.js simulator</h2>
+                    <h2 id="simulator"><a href="#simulator">Icarus.js simulator</a></h2>
                     <ul>
                         <li>Intro to the simulation</li>
                         <li>Overview for one of the states say HH + VV, and the results</li>
                         <li>Other options... Bell states</li>
                     </ul>
 
-                    <h2>Conclusion</h2>
+                    <h2 id="conclusions"><a href="#conclusions">Conclusion</a></h2>
                   <div class="row" id="footer">
-                        <div class="col-lg-10 col-lg-offset-1 lead">
+                        <div class="col-xs-10 col-xs-offset-1 lead">
                             Made with <i class="fa fa-heart-o"></i> by <a href="http://github.com/eoinmurray"> eoinmurray</a>@<a href="http://www.tyndall.ie/content/epitaxy-and-physics-nanostructures">epn-tyndall</a>
                         </div>
                     </div>
@@ -94,12 +105,17 @@
             </div>
 
             <div id="my-gui-container"></div>
-            <div class="three-js-hook"></div>
+            <div class="three-js-hook">
+                <div style="margin-left:80%; margin-top:40px" class="affix">
+                    <h1>Icarus.js</h1>
+                    <small>Click and drag to move camera.</small>
+                </div>
+            </div>
             <div class="histograms row">
-                <div class="col-lg-3 histogram chartD1D3"></div>
-                <div class="col-lg-3 histogram chartD1D4"></div>
-                <div class="col-lg-3 histogram chartD2D3"></div>
-                <div class="col-lg-3 histogram chartD2D4"></div>
+                <div class="col-xs-3 histogram chartD1D3"></div>
+                <div class="col-xs-3 histogram chartD1D4"></div>
+                <div class="col-xs-3 histogram chartD2D3"></div>
+                <div class="col-xs-3 histogram chartD2D4"></div>
             </div>
         </div>
 
@@ -116,7 +132,7 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
         <script src="scripts/c68c1d8f.vendor.js"></script>
-        <script src="scripts/af84c3f5.main.js"></script>
+        <script src="scripts/72aa53ce.main.js"></script>
 
 </body>
 </html>
